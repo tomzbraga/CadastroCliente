@@ -1,0 +1,41 @@
+
+.container {
+    background-color: #fff;
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 115%;
+    height: 60vh;
+    overflow-y: auto;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #0056b3;
+}
+

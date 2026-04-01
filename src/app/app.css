@@ -1,0 +1,15 @@
+:host {
+    margin: 0;
+    height: 100vh;
+    background-color: #f5f5f5;
+    display: block;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+    height: 100%;
+    width: 100%;
+}
