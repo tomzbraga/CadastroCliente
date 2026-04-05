@@ -49,19 +49,19 @@ public class Cliente {
 
 // Construtor
 
-public Cliente () {
+public Cliente() {
 
 }
 
 public Cliente(String nome, String dataNascimento, String rg, String endereco, int genero, String telefone, String email) {
     super();
-    this.nome = nome;
+    this.nome           = nome;
     this.dataNascimento = dataNascimento;
-    this.rg = rg;
-    this.endereco = endereco;
-    this.genero = Genero.values()[genero];
-    this.telefone = telefone;
-    this.email = email;
+    this.rg             = rg;
+    this.endereco       = endereco;
+    this.genero         = Genero.values()[genero];
+    this.telefone       = telefone;
+    this.email          = email;
 }
 
 

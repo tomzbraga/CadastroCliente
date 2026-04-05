@@ -25,8 +25,11 @@ public class ClienteRepository {
         return entityManager.createQuery("SELECT c FROM Cliente c WHERE c.nome = :nome", Cliente.class)
                         .setParameter("nome", nome)
                         .getSingleResult();
-}
+    }
 
+    public Cliente findById(Long id) {
+        return entityManager.find(Cliente.class, id);
+    }
 
     public void update(Cliente cliente) {
         entityManager.merge(cliente);

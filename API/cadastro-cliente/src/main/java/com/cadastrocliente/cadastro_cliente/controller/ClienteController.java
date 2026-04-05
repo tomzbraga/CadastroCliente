@@ -21,14 +21,18 @@ public class ClienteController {
         clienteRepository.save(cliente);
     }
 
-    @PostMapping
-    public void editarCliente(@RequestBody Cliente cliente) {
+    @PutMapping
+    public void editarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
+        cliente.setId(id);
         clienteRepository.update(cliente);
     }
 
-    @PostMapping 
-    public void deletarCliente(@RequestBody Cliente cliente) {
-        clienteRepository.delete(cliente);
+    @DeleteMapping("/{id}")
+    public void deletarCliente(@PathVariable Long id) {
+        Cliente cliente = clienteRepository.findById(id);
+        if (cliente != null) {
+            clienteRepository.delete(cliente);
+        }
     }
 
     @GetMapping("/nome/{nome}")
