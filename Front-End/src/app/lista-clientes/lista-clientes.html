@@ -3,9 +3,24 @@
     
     <h1>Clientes Cadastrados</h1>
 
-    <table>
-        <th>ID</th>
-        <th>Nome</th>
+    <table class = "table table-striphead">
+       
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+            </tr>
+
+        </thead>
+        
+        <tbody>
+
+            <tr *ngFor = "let cliente of clientes">
+
+            </tr>
+
+        </tbody>
     </table>
 
 </section>
