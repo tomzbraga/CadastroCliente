@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
+import java.time.LocalDate;
 
 
 
@@ -22,8 +23,8 @@ public class Cliente {
     @Column(name = "nome")
     private String nome;
     
-    @Column(name = "data_nascimento")
-    private String dataNascimento;
+    @Column(name = "dataNascimento")
+    private LocalDate dataNascimento;
     
     @Column(name = "rg")
     private String rg;
@@ -53,13 +54,13 @@ public Cliente() {
 
 }
 
-public Cliente(String nome, String dataNascimento, String rg, String endereco, int genero, String telefone, String email) {
+public Cliente(String nome, LocalDate dataNascimento, String rg, String endereco, Genero genero, String telefone, String email) {
     super();
     this.nome           = nome;
     this.dataNascimento = dataNascimento;
     this.rg             = rg;
     this.endereco       = endereco;
-    this.genero         = Genero.values()[genero];
+    this.genero         = genero;
     this.telefone       = telefone;
     this.email          = email;
 }
@@ -87,12 +88,12 @@ public void setNome(String nome) {
 
 // Data de Nascimento ***************************************
 
-public String setDataNascimento() {
-    return dataNascimento;
+public LocalDate getDataNascimento() { 
+    return dataNascimento; 
 }
 
-public void getDataNascimento(String dataNascimento) {
-    this.dataNascimento = dataNascimento;
+public void setDataNascimento(LocalDate dataNascimento) { 
+    this.dataNascimento = dataNascimento; 
 }
 
 // RG ***************************************
@@ -121,8 +122,8 @@ public Genero getGenero() {
     return genero;
 }
 
-public void setGenero(int genero) {
-    this.genero = Genero.values()[genero];
+public void setGenero(Genero genero) {
+    this.genero = genero;
 }
 
 // Telefone ***************************************

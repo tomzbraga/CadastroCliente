@@ -3,13 +3,13 @@
     
     <h1>Clientes Cadastrados</h1>
 
-    <table class = "table table-striphead">
+    <table>
        
         <thead>
 
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
+                <th class="col-id">ID</th>
+                <th class="col-nome">Nome</th>
             </tr>
 
         </thead>
@@ -17,7 +17,8 @@
         <tbody>
 
             <tr *ngFor = "let cliente of clientes">
-
+                <td>{{cliente.id}}</td>
+                <td>{{cliente.nome}}</td>
             </tr>
 
         </tbody>

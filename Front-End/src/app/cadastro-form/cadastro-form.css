@@ -5,6 +5,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 115%;
+    height: 80vh;
     
 }
 
@@ -19,7 +20,7 @@
 }
 
 .container input {
-    margin-bottom: 15px;
+    margin-bottom: 8%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
