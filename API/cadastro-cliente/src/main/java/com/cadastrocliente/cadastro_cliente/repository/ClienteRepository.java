@@ -17,30 +17,36 @@ public class ClienteRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void save(Cliente cliente) {
+    public void save(Cliente cliente) 
+    {
         entityManager.persist(cliente);
     }
 
-    public Cliente findByNome(String nome) {
+    public Cliente findByNome(String nome) 
+    {
         return entityManager.createQuery("SELECT c FROM Cliente c WHERE c.nome = :nome", Cliente.class)
                         .setParameter("nome", nome)
                         .getSingleResult();
     }
 
-    public Cliente findById(Long id) {
+    public Cliente findById(Long id) 
+    {
         return entityManager.find(Cliente.class, id);
     }
 
-    public void update(Cliente cliente) {
+    public void update(Cliente cliente) 
+    {
         entityManager.merge(cliente);
     }
 
-    public void delete(Cliente cliente) {
+    public void delete(Cliente cliente) 
+    {
         entityManager.remove(cliente);
     }
 
-    public List<Cliente> listarClientes() {
+    public List<Cliente> listarClientes() 
+    {
         return entityManager.createQuery("SELECT c FROM Cliente c", Cliente.class)
                             .getResultList();
-}
+    }
 }

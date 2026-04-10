@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../classes/cliente.model'
 import { CommonModule } from '@angular/common';
+import { Api } from '../services/api';
 
 @Component({
   selector: 'app-lista-clientes',
@@ -9,11 +10,33 @@ import { CommonModule } from '@angular/common';
   styleUrl: './lista-clientes.css',
 })
 export class ListaClientes implements OnInit {
-
-  clientes?: Cliente[];
-
-  constructor() {}
-
-  ngOnInit(): void {}
-
+  
+  clientes: Cliente[] = [];
+  
+  constructor(private api: Api) {}
+  
+  ngOnInit(): void 
+  {
+    console.log("Clientes instanciados", this.clientes);
+    
+    this.api.listarClientes().subscribe(
+      {
+        next: (data) => 
+          {
+            this.clientes = data.map(c => 
+              new Cliente
+              (
+                c.id,
+                c.nome,
+                c.dataNascimento,
+                c.rg,
+                c.endereco,
+                c.genero,
+                c.telefone,
+                c.email
+              )
+            )
+            //error: (err) => console.error('Erro ao carregar clientes', err)
+          }});
+  }
 }

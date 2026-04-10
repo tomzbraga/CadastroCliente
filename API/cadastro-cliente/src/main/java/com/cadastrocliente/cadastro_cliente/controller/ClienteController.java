@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ClienteController {
 
     private final ClienteRepository clienteRepository;
@@ -21,7 +22,7 @@ public class ClienteController {
         clienteRepository.save(cliente);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public void editarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
         cliente.setId(id);
         clienteRepository.update(cliente);
@@ -35,7 +36,7 @@ public class ClienteController {
         }
     }
 
-    @GetMapping("/nome/{nome}")
+    @GetMapping("/{id}")
     public Cliente listarCliente(@PathVariable String nome) {
         return clienteRepository.findByNome(nome);
     }
