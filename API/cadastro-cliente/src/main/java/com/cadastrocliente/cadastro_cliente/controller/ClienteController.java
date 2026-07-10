@@ -18,14 +18,16 @@ public class ClienteController {
     }
 
     @PostMapping
-    public void salvarCliente(@RequestBody Cliente cliente) {
+    public Cliente salvarCliente(@RequestBody Cliente cliente) {
         clienteRepository.save(cliente);
+        return cliente;
     }
 
     @PutMapping("/{id}")
-    public void editarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
+    public Cliente editarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
         cliente.setId(id);
         clienteRepository.update(cliente);
+        return cliente;
     }
 
     @DeleteMapping("/{id}")
@@ -37,7 +39,12 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
-    public Cliente listarCliente(@PathVariable String nome) {
+    public Cliente buscarPorId(@PathVariable Long id) {
+        return clienteRepository.findById(id);
+    }
+
+    @GetMapping("/nome/{nome}")
+    public Cliente buscarPorNome(@PathVariable String nome) {
         return clienteRepository.findByNome(nome);
     }
 

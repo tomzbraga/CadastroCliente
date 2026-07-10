@@ -1,31 +1,36 @@
 <section class="container">
-    
-    <h1>Cadastro de Cliente</h1>
+  <h1>Cadastro de Cliente</h1>
 
-    <form>
-      <p>Itens com * são obrigatórios</p>
-      <input type="text" placeholder="Nome completo*" required>
-      <input type="text" placeholder="Data de nascimento*" required>
-      <input type="text" placeholder="RG*" required>
-      <input type="text" placeholder="Endereço*" required>
-      <div class="gender-options">
-        <p>Gênero* </p>
-        <label>
-          <input type="radio" name="genero" value="M" required>
-          Masculino
-        </label>
-        <label>
-          <input type="radio" name="genero" value="F" required>
-          Feminino
-        </label>
-        <label>
-          <input type="radio" name="genero" value="O" required>
-          Outro
-        </label>
-      </div>
-      <input type="text" placeholder="Telefone">
-      <input type="email" placeholder="Email">
-      <button type="submit">Cadastrar</button>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>Itens com * são obrigatórios</p>
 
-    </form>
+    <input type="text" placeholder="Nome completo*" formControlName="nome" />
+
+    <input type="date" placeholder="Data de nascimento*" formControlName="dataNascimento" />
+
+    <input type="text" placeholder="RG*" formControlName="rg" />
+
+    <input type="text" placeholder="Endereço*" formControlName="endereco" />
+
+    <div class="gender-options">
+      <p>Gênero*</p>
+      <label>
+        <input type="radio" formControlName="genero" value="M" />
+        Masculino
+      </label>
+      <label>
+        <input type="radio" formControlName="genero" value="F" />
+        Feminino
+      </label>
+      <label>
+        <input type="radio" formControlName="genero" value="O" />
+        Outro
+      </label>
+    </div>
+
+    <input type="text" placeholder="Telefone" formControlName="telefone" />
+    <input type="email" placeholder="Email" formControlName="email" />
+
+    <button type="submit" [disabled]="form.invalid">Cadastrar</button>
+  </form>
 </section>
