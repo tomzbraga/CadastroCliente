@@ -8,10 +8,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cliente of clientes()">
+      <tr *ngFor="let cliente of clientes()" (click)="abrirModal(cliente)" class="linha-clicavel">
         <td>{{ cliente.id }}</td>
         <td>{{ cliente.nome }}</td>
       </tr>
     </tbody>
   </table>
 </section>
+
+<app-cliente-modal
+  *ngIf="clienteSelecionado()"
+  [cliente]="clienteSelecionado()!"
+  (fechar)="fecharModal()"
+  (salvar)="onSalvar($event)"
+  (excluir)="onExcluir($event)"
+>
+</app-cliente-modal>

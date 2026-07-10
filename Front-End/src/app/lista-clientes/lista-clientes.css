@@ -1,22 +1,20 @@
-
 .container {
-    background-color: #fff;
-    padding: 5%;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 115%;
-    height: 80vh;
+  background-color: #fff;
+  padding: 5%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 115%;
+  height: 80vh;
 }
 
 .container h1 {
-    text-align: center;
-    margin-bottom: 10%;
+  text-align: center;
+  margin-bottom: 10%;
 }
 
 .container table {
-    width: 100%;
-    justify-content: left;
-    
+  width: 100%;
+  justify-content: left;
 }
 
 .col-id {
@@ -27,4 +25,12 @@
 .col-nome {
   width: 70%;
   text-align: left;
+}
+
+.linha-clicavel {
+  cursor: pointer;
+}
+
+.linha-clicavel:hover {
+  background-color: #f0f0f0;
 }

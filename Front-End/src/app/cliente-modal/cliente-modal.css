@@ -1,0 +1,82 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 420px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modal-card label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.25rem;
+}
+
+.gender-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.acoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.btn-excluir {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-salvar {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-salvar:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
